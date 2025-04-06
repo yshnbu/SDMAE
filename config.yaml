@@ -1,0 +1,84 @@
+version: SDMAE
+description: SDMAE
+#time_version: False # if set ture, add time information in version
+#save_version_files: False # if set true, save each version files in runs
+#save_version_file_patterns:
+#  - "*.py"
+#  - "*.yaml"
+#pass_dirs:
+#  - '.'
+#  - '_'
+#  - 'runs'
+#  - 'results'
+
+# filepath
+train_dirs:
+  - /home/gygc/data/data2020/dev_data/fan/train
+  - /home/gygc/data/data2020/dev_data/pump/train
+  - /home/gygc/data/data2020/dev_data/slider/train
+  - /home/gygc/data/data2020/dev_data/ToyCar/train
+  - /home/gygc/data/data2020/dev_data/ToyConveyor/train
+  - /home/gygc/data/data2020/dev_data/valve/train
+add_dirs:
+  - /home/gygc/data/data2020/eval_data/fan/train
+  - /home/gygc/data/data2020/eval_data/pump/train
+  - /home/gygc/data/data2020/eval_data/slider/train
+  - /home/gygc/data/data2020/eval_data/ToyCar/train
+  - /home/gygc/data/data2020/eval_data/ToyConveyor/train
+  - /home/gygc/data/data2020/eval_data/valve/train
+valid_dirs:
+  - /home/gygc/data/data2020/dev_data/fan/test
+  - /home/gygc/data/data2020/dev_data/pump/test
+  - /home/gygc/data/data2020/dev_data/slider/test
+  - /home/gygc/data/data2020/dev_data/ToyCar/test
+  - /home/gygc/data/data2020/dev_data/ToyConveyor/test
+  - /home/gygc/data/data2020/dev_data/valve/test
+test_dirs:
+  - /home/gygc/data/data2020/eval_data/fan/test
+  - /home/gygc/data/data2020/eval_data/pump/test
+  - /home/gygc/data/data2020/eval_data/slider/test
+  - /home/gygc/data/data2020/eval_data/ToyCar/test
+  - /home/gygc/data/data2020/eval_data/ToyConveyor/test
+  - /home/gygc/data/data2020/eval_data/valve/test
+
+
+result_dir: ./results
+# audio preprocess
+sr: 16000
+n_fft: 1024
+n_mels: 128
+win_length: 1024
+hop_length: 313
+power: 2.0
+secs: 10
+
+cuda: True
+# train
+random_seed: 42
+epochs: 100
+batch_size: 32
+num_workers: 16
+lr: 1e-4
+device_ids:
+  - 0
+
+#valid_every_epochs: 1
+#early_stop_epochs: -1
+#start_save_model_epochs: 90
+#save_model_interval_epochs: 1
+#start_scheduler_epoch: 1
+#start_valid_epoch: 30
+
+# loss
+use_arcface: True
+m: 0.7
+s: 30
+sub_center: 1
+
+# anomaly score
+
+lof_n: 6
+
+load_epoch: best # it will test your model if set a value, e.g. best, 10, 100
+
+
