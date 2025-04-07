@@ -33,3 +33,4 @@ Our work is inspired by the following projects:
 + [ConvMAE](https://github.com/Alpha-VL/ConvMAE)
 + [Dino](https://github.com/facebookresearch/dino)
 
+Our system integrates multiple backends for inference, and this is the model with the highest single performance.
