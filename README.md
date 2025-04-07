@@ -26,7 +26,7 @@ Then place it into ./runs/SDMAE/model.
 ```shell
 $ python infer.py
 ```
-### Model Weights File
+
 ---
 Our work is inspired by the following projects:
 + [STgram-MFN](https://github.com/liuyoude/STgram-MFN)
